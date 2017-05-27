@@ -51,7 +51,6 @@ int main(){
     printf("\n======= WELCOME TO BINARY TREE BY SOYOSCARRH ====\n\n\n");    //Some credit :p 
 
     /*
-    
     //CREATE BY INORDER EXPRESSION
     char *a = "((1+(8*(1+2))-3)";                                              //Create a new Expression
     TreeX = CreateTreeFromInOrder(a, 1);                                    //Now create from Inorder and send 1 to show it
@@ -60,7 +59,7 @@ int main(){
     printf("\n\n");                                                         //Now some space
     */
 
-    
+    /*
     //CREATE BY LEVEL
     Item* Data[10];                                                         //For do that we Need an Array of Items 
     for (i = 0; i < 10; ++i) Data[i] = CreateNewItem((i+'0'));              //So we create it
@@ -72,10 +71,9 @@ int main(){
     int TreeDeepness = Deepness(&TreeX);                                    //Get the Deepness
     printf("\n\nDeepness :%i\n\n\n", TreeDeepness);                         //Show the deepness 
 
-
     //SHOW PATHS TO LEAFS 
     ShowPathsToLeafs(&TreeX);                                               //Show all the leafs
-    /*
+    */
 
 
     //WORK IN A BTS
@@ -96,7 +94,6 @@ int main(){
     printf("\n");
     ShowInOrder(&TreeX);
 
-    */
     return 0;
 }
 
