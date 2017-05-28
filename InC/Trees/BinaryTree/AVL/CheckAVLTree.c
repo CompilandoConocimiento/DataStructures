@@ -1,5 +1,5 @@
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++           BINARY TREE FUNTIONS FILE         ++++++++++++++++++++
+++++++++++++++           AVL TREE FUNTIONS FILE            ++++++++++++++++++++
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 #include <stdio.h>                                                          //Library that we are going to use
@@ -19,12 +19,12 @@ void ShowItem(Item *ItemX){                                                //===
 
 Item* CreateItem(){                                                         //=== IMPLEMENTATION OF CREATE ITEM ===
     Item *Temporal = (Item*) malloc(sizeof(Item));                          //Reserve memory
-    printf("Give me a Int: ");                                             //Simple message
+    printf("Give me a Int: ");                                              //Simple message
     scanf("%i%*c", &Temporal->Symbol);                                      //Give me data!, I need data :3
     return Temporal;                                                        //You are complete, go, and protect the data
 }
 
-Item* CreateNewItem(int Data){                                             //=== IMPLEMENTATION OF CREATE ITEM ===
+Item* CreateNewItem(int Data){                                              //=== IMPLEMENTATION OF CREATE ITEM ===
     Item *Temporal = (Item*) malloc(sizeof(Item));                          //Reserve memory
     Temporal->Symbol = Data;                                                //Just Give the number
     return Temporal;                                                        //You are complete, go, and protect the data
@@ -46,15 +46,30 @@ int CompareItems(Item *DataLeft, Item *DataRight){                          //==
 int main(){
     AVLTree *AVLTreeX = NULL;                                               //Our test Tree
 
+    InsertInAVL(&AVLTreeX, CreateNewItem(10));
+    InsertInAVL(&AVLTreeX, CreateNewItem(15));
+    InsertInAVL(&AVLTreeX, CreateNewItem(8));
+    InsertInAVL(&AVLTreeX, CreateNewItem(20));
+    InsertInAVL(&AVLTreeX, CreateNewItem(1));
+    InsertInAVL(&AVLTreeX, CreateNewItem(5));
+    InsertInAVL(&AVLTreeX, CreateNewItem(9));
+    InsertInAVL(&AVLTreeX, CreateNewItem(6));
+    DeleteInAVL(&AVLTreeX, CreateNewItem(20));
+    DeleteInAVL(&AVLTreeX, CreateNewItem(9));
+    DeleteInAVL(&AVLTreeX, CreateNewItem(8));
 
-    InsertAVL(&AVLTreeX, CreateNewItem(10));
-    InsertAVL(&AVLTreeX, CreateNewItem(20));
-    InsertAVL(&AVLTreeX, CreateNewItem(30));
-    InsertAVL(&AVLTreeX, CreateNewItem(40));
-    InsertAVL(&AVLTreeX, CreateNewItem(50));
-    InsertAVL(&AVLTreeX, CreateNewItem(25));
+
+    /*
+    InsertInAVL(&AVLTreeX, CreateNewItem(10));
+    InsertInAVL(&AVLTreeX, CreateNewItem(20));
+    InsertInAVL(&AVLTreeX, CreateNewItem(30));
+    InsertInAVL(&AVLTreeX, CreateNewItem(40));
+    InsertInAVL(&AVLTreeX, CreateNewItem(50));
+    InsertInAVL(&AVLTreeX, CreateNewItem(25));
+    */    
 
     ShowInOrder(AVLTreeX);
+    printf("\n");
     return 0;
 }
 

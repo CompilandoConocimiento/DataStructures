@@ -57,8 +57,8 @@ int GetHeight(AVLTree *AVLTreeX);
 int CompareItems(Item *DataLeft, Item *DataRight);								// === COMPARE FOR BIGGER -1:LEFT, 1:Right =====
 AVLTree* SearchItemAVL(AVLTree *AVLTreeX, Item *Data);							// ==== SEARCH IN A BALANCE TREE ===============
 
-void InsertAVL(AVLTree **AVLTreeX, Item *Data);								// ==== INSERT IN A BALANCE TREE ===============
-void DeleteItemAVL(AVLTree **AVLTreeX, Item *Data);								// ==== INSERT IN A BALANCE TREE ===============
+void InsertInAVL(AVLTree **AVLTreeX, Item *Data);								// ==== INSERT IN A BALANCE TREE ===============
+void DeleteInAVL(AVLTree **AVLTreeX, Item *Data);								// ==== INSERT IN A BALANCE TREE ===============
 
 
 
