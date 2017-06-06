@@ -9,6 +9,7 @@
 #include <string.h>                                                         //Library that we are going to use
 #include "BinaryTree.h"                                                     //Our beloved Binary Tree
 #include "Stack.h"                                                          //Our beloved Binary Tree
+#include "Queue.h"                                                          //Our beloved Binary Tree
 
 // ================================================
 // ===      FUNTIONS FOR USING A AUX STACK      ===
@@ -24,6 +25,15 @@ void ShowStackItem(StackItem *StackItemX){                                  //==
     ShowItem(StackItemX->TreeNode->NodeItem);                               //Call Node Tree Function
 }
 
+void ShowQueueItem(QueueItem *QueueItemX){                                  //YOU HAVE TO IMPLEMENT THIS
+    ShowItem(QueueItemX->TreeNode->NodeItem);                               //Call Node Tree Function
+}
+
+QueueItem* CreateQueueItem(Node* SomeTreeNode){                             //YOU HAVE TO IMPLEMENT THIS
+    QueueItem *Temporal = (QueueItem*) malloc(sizeof(QueueItem));           //Reserve memory
+    Temporal->TreeNode = SomeTreeNode;                                      //Store the pointer
+    return Temporal;                                                        //You are complete, go, and protect the data
+}
 
 /*==========================================================
 ============ FUNTIONS OF A BINARY TREE IN C    =============
@@ -150,6 +160,31 @@ void ShowPostOrder(BinaryTree **TreeX){                                     // =
     printf("> ");                                                           //Give some style
 }
 
+void ShowLeverOrder(BinaryTree **TreeX){                                    // ==== SHOW LEVEL ORDER OF A TREE == 
+    if (Root == NULL) return;                                               //If there is nothign to show
+
+    Queue* QueueX = CreateQueue();                                          //Create a Queue
+    Enqueue(QueueX, CreateQueueItem(Root));                                 //Add to the Queue the empty root    
+    int ItemInQeue = 1;                                                     //You shall have the number of items
+
+    while(ItemInQeue > 0) {                                                 //While there are something in the Queue                  
+        Root = Dequeue(QueueX)->TreeNode;                                   //Fist give me the head
+
+        ItemInQeue--;                                                       //Take notice little boy
+        ShowItem(Root->NodeItem);                                           //Show the element
+
+        if (LeftTree != NULL) {                                             //If you have a son
+            Enqueue(QueueX, CreateQueueItem(Root->Left));                   //Add it
+            ItemInQeue++;                                                   //Take notice little boy
+        }  
+
+        if (RightTree != NULL) {                                            //If you have a son
+            Enqueue(QueueX, CreateQueueItem(Root->Right));                  //Add it!
+            ItemInQeue++;                                                   //Take notice little boy
+        }
+    }
+}
+
 
 BinaryTree* CreateTreeFromInOrder(char *A, int ShowIt){                     // ==== CREATE EXPRESSION TREE FROM INORDER == 
     int i = 1, ItemsInStack = 1;                                            //HaTe that I can´t have internal int's in for's
@@ -213,5 +248,7 @@ void ShowPathsToLeafs(BinaryTree **TreeX){                                  // =
     Stack* StackX = CreateStack();                                          //Create a Stack
     PathsLeafsInternal(TreeX, &StackX);
 }
+
+
 
 

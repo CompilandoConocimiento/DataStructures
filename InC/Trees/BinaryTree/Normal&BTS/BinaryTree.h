@@ -68,4 +68,4 @@ void ShowPostOrder(BinaryTree **TreeX);                                         
 
 BinaryTree* CreateTreeFromInOrder(char *A, int ShowIt);							// ==== CREATE EXPRESSION TREE FROM INORDER == 
 void ShowPathsToLeafs(BinaryTree **TreeX);			// ==== SHOW PATHS OF A BINARY TREE ======= 
-
+void ShowLeverOrder(BinaryTree **TreeX);

@@ -76,23 +76,33 @@ int main(){
     */
 
 
+    ///*
     //WORK IN A BTS
-    InsertBTS(&TreeX, CreateNewItem('c'));                                  //Insert               
-    InsertBTS(&TreeX, CreateNewItem('b'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('a'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('g'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('f'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('d'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('e'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('h'));                                  //Insert 
-    InsertBTS(&TreeX, CreateNewItem('i'));                                  //Insert 
+    char CharItem;          
+    printf("Add elements to a BTS, we will stop when we see ' '\n");        //Menu
+
+    while (1) {                                                             //Infinite bucle                                               
+        scanf("%c%*c", &CharItem);                                          //Add a new item 
+        if (CharItem == ' ') break;                                         //Selection
+        InsertBTS(&TreeX, CreateNewItem(CharItem));                         //Insert 
+    }
 
 
-    ShowInOrder(&TreeX);                                                    //Show the actual tree
+    printf("Showing Inorder: \n");                                          //Just showing
+    ShowInOrder(&TreeX);                                                    //Just showing
 
-    DeleteItemBTS(&TreeX, CreateNewItem('c'));
-    printf("\n");
-    ShowInOrder(&TreeX);
+    printf("\n\nShowing LeverOrder:\n");                                    //Just showing
+    ShowLeverOrder(&TreeX);                                                 //Just showing
+
+
+    printf("\n\n\n\n");                                                     //Just showing
+
+    //*/
+
+    
+    
+              
+
 
     return 0;
 }
