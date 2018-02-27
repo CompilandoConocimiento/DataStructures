@@ -14,7 +14,6 @@
 // ================================================
 // ===      FUNTIONS FOR USING A AUX STACK      ===
 // ================================================
-
 StackItem* CreateStackItem(Node* SomeTreeNode){                             //=== IMPLEMENTATION OF CREATE ITEM ===
     StackItem *Temporal = (StackItem*) malloc(sizeof(StackItem));           //Reserve memory
     Temporal->TreeNode = SomeTreeNode;                                      //Store the pointer
@@ -57,11 +56,11 @@ Node* CreateBinaryTree(Item *NewItem){                                      // =
 BinaryTree* InsertByLevel(int Index, Item **Data, int Size){                // ==== CREATE A TREE FROM AN ARRAY  OF ITEMS ==
     if (Index >= Size) return NULL;                                         //If you just get out of a Size get a Leaf
 
-    BinaryTree *Nuevo = CreateBinaryTree(Data[Index]);                      //Create a New Binary Tree
-    Nuevo->Left = InsertByLevel(2*Index + 1, Data, Size);                   //You know where are the next item
-    Nuevo->Right = InsertByLevel(2*Index + 2, Data, Size);                  //You know where are the next item
+    BinaryTree *New = CreateBinaryTree(Data[Index]);                        //Create a New Binary Tree
+    New->Left = InsertByLevel(2*Index + 1, Data, Size);                     //You know where are the next item
+    New->Right = InsertByLevel(2*Index + 2, Data, Size);                    //You know where are the next item
 
-    return Nuevo;                                                           //You are done, you are the Root
+    return New;                                                             //You are done, you are the Root
 }
 
 void EliminateTree(BinaryTree**TreeX){                                      // ==== DESTROY RECURSIBLE A TREE == 
@@ -167,7 +166,7 @@ void ShowLeverOrder(BinaryTree **TreeX){                                    // =
     Enqueue(QueueX, CreateQueueItem(Root));                                 //Add to the Queue the empty root    
     int ItemInQeue = 1;                                                     //You shall have the number of items
 
-    while(ItemInQeue > 0) {                                                 //While there are something in the Queue                  
+    while(ItemInQeue > 0) {                                                 //While there are something in the Queue 
         Root = Dequeue(QueueX)->TreeNode;                                   //Fist give me the head
 
         ItemInQeue--;                                                       //Take notice little boy

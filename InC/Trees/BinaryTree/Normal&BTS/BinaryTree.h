@@ -48,12 +48,12 @@ Item* CreateNewItem(char Data);                                                 
 // ===========================================
 BinaryTree* InsertByLevel(int Index, Item **Data, int Size);                    // ==== CREATE A TREE FROM AN ARRAY  OF ITEMS ==
 
-void InsertBTS(BinaryTree **TreeX, Item *Data);									// ==== INSERT IN A TREE LIKE IF IT WAS BTS ====
-BinaryTree* SearchItemBTS(BinaryTree **TreeX, Item *Data);						// ==== SEARCH IN A TREE LIKE IF IT WAS BTS ====
-void DeleteItemBTS(BinaryTree **TreeX, Item *Data);								// ==== DELETE IN A TREE LIKE IF IT WAS BTS ====
+void InsertBTS(BinaryTree **TreeX, Item *Data);                                 // ==== INSERT IN A TREE LIKE IF IT WAS BTS ====
+BinaryTree* SearchItemBTS(BinaryTree **TreeX, Item *Data);                      // ==== SEARCH IN A TREE LIKE IF IT WAS BTS ====
+void DeleteItemBTS(BinaryTree **TreeX, Item *Data);                             // ==== DELETE IN A TREE LIKE IF IT WAS BTS ====
 
 void EliminateTree(BinaryTree **TreeX);                                         // ==== DESTROY A BINARY TREE ================== 
-int CompareItems(Item *DataLeft, Item *DataRight);								// === COMPARE FOR BIGGER -1:LEFT, 1:Right =====
+int CompareItems(Item *DataLeft, Item *DataRight);                              // === COMPARE FOR BIGGER -1:LEFT, 1:Right =====
 
 
 // ===========================================
@@ -62,10 +62,10 @@ int CompareItems(Item *DataLeft, Item *DataRight);								// === COMPARE FOR BIG
 // ===========================================
 int Deepness(BinaryTree**TreeX);
 
-void ShowPreOrder(BinaryTree **TreeX);                                          // ==== SHOW PREORDER BY A BINARY TREE ===
-void ShowInOrder(BinaryTree **TreeX);                                           // ==== SHOW INORDER BY A BINARY TREE ==== 
-void ShowPostOrder(BinaryTree **TreeX);                                         // ==== SHOW POSTORDER BY A BINARY TREE == 
+void ShowPreOrder(BinaryTree **TreeX);                                          // ==== SHOW PREORDER BY A BINARY TREE =======
+void ShowInOrder(BinaryTree **TreeX);                                           // ==== SHOW INORDER BY A BINARY TREE ======== 
+void ShowPostOrder(BinaryTree **TreeX);                                         // ==== SHOW POSTORDER BY A BINARY TREE ====== 
 
-BinaryTree* CreateTreeFromInOrder(char *A, int ShowIt);							// ==== CREATE EXPRESSION TREE FROM INORDER == 
-void ShowPathsToLeafs(BinaryTree **TreeX);			// ==== SHOW PATHS OF A BINARY TREE ======= 
-void ShowLeverOrder(BinaryTree **TreeX);
+BinaryTree* CreateTreeFromInOrder(char *A, int ShowIt);                         // ==== CREATE EXPRESSION TREE FROM INORDER == 
+void ShowPathsToLeafs(BinaryTree **TreeX);                                      // ==== SHOW PATHS OF A BINARY TREE ========== 
+void ShowLeverOrder(BinaryTree **TreeX);                                        // ==== SHOW DEEP OF A BINARY TREE ===========
