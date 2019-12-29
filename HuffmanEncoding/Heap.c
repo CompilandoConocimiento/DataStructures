@@ -3,8 +3,6 @@
 ===================================================================*/
 /**
  * @author  Rosas Hernandez Oscar Andres
- * @author  Alan Enrique Ontiveros Salazar
- * @author  Laura Andrea Morales 
  * @version 0.1
  * @team    CompilandoConocimiento
  * @date    1/06/2018
